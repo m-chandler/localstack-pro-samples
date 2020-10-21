@@ -9,7 +9,7 @@ from localstack.config import TEST_APIGATEWAYV2_URL
 def test_websocket_api():
     client = boto3.client('apigatewayv2', endpoint_url=TEST_APIGATEWAYV2_URL)
     queue = Queue()
-    msg = {'action': 'test-action'}
+    msg = {'action': 'test-action-two'}
 
     async def start_client(uri):
         async with websockets.connect(uri) as websocket:

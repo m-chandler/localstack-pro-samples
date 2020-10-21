@@ -19,19 +19,24 @@ custom:
 
 functions:
   connectionHandler:
-    handler: handler.handler
+    handler: connect.handler
     events:
       - websocket:
           route: $connect
       - websocket:
           route: $disconnect
   defaultHandler:
-    handler: handler.handler
+    handler: default.handler
     events:
       - websocket:
           route: $default
-  actionHandler:
-    handler: handler.handler
+  actionOneHandler:
+    handler: handler-one.handler
     events:
       - websocket:
-          route: test-action
+          route: test-action-one
+  actionTwoHandler:
+    handler: handler-two.handler
+    events:
+      - websocket:
+          route: test-action-two
